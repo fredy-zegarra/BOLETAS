@@ -1,0 +1,489 @@
+<!doctype html>
+<!-- saved from url=(0060)file:///Users/fredy/Desktop/Recibo%20de%20Pago%20-%20U1.html -->
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recibo de Pago - UCSM</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          #1a365d 0%,
+          #2d5aa0 50%,
+          #4a90e2 100%
+        );
+        min-height: 100vh;
+      }
+
+      .receipt {
+        background: white;
+        max-width: 800px;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        border: 2px solid #1a365d;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #1a365d 0%, #2d5aa0 100%);
+        color: white;
+        padding: 25px 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(255, 255, 255, 0.05) 10px,
+          rgba(255, 255, 255, 0.05) 20px
+        );
+        z-index: 0;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .university-logo {
+        width: 80px;
+        height: 80px;
+        background: white;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1a365d;
+        font-size: 20px;
+        font-weight: bold;
+        border: 3px solid #4a90e2;
+      }
+
+      .university-name {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .university-subtitle {
+        text-align: center;
+        font-size: 14px;
+        opacity: 0.9;
+        margin-bottom: 15px;
+      }
+
+      .university-address {
+        text-align: center;
+        font-size: 12px;
+        opacity: 0.8;
+        line-height: 1.4;
+      }
+
+      .receipt-header {
+        background: #f8f9fa;
+        padding: 20px 40px;
+        border-bottom: 3px solid #1a365d;
+      }
+
+      .receipt-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: #1a365d;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .receipt-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .receipt-number {
+        font-size: 16px;
+        color: #666;
+        font-weight: bold;
+      }
+
+      .receipt-date {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .content {
+        padding: 30px 40px;
+      }
+
+      .student-info {
+        background: #f0f4f8;
+        padding: 25px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        border-left: 5px solid #1a365d;
+      }
+
+      .section-title {
+        color: #1a365d;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      .info-item {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .info-label {
+        font-size: 12px;
+        color: #666;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+
+      .info-value {
+        font-size: 16px;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .payment-details {
+        background: white;
+        border: 2px solid #e1e8ed;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 25px;
+      }
+
+      .payment-header {
+        background: #1a365d;
+        color: white;
+        padding: 15px 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .payment-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .payment-table th {
+        background: #f8f9fa;
+        padding: 15px;
+        text-align: left;
+        font-weight: bold;
+        color: #1a365d;
+        border-bottom: 2px solid #e1e8ed;
+      }
+
+      .payment-table td {
+        padding: 15px;
+        border-bottom: 1px solid #e1e8ed;
+      }
+
+      .concept-description {
+        font-weight: 500;
+        color: #333;
+      }
+
+      .special-rate {
+        background: #e8f5e8;
+        color: #2d5016;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 5px;
+      }
+
+      .amount {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1a365d;
+        text-align: right;
+      }
+
+      .total-section {
+        background: #1a365d;
+        color: white;
+        padding: 20px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .total-label {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .total-amount {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .payment-method {
+        background: #f0f4f8;
+        padding: 20px 25px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+      }
+
+      .payment-status {
+        text-align: center;
+        padding: 15px;
+        background: #d4edda;
+        color: #155724;
+        border: 2px solid #c3e6cb;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .authenticity-section {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 10px;
+        border: 2px solid #e1e8ed;
+        margin-bottom: 20px;
+      }
+
+      .authenticity-title {
+        color: #1a365d;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .hash-info {
+        font-family: "Courier New", monospace;
+        background: white;
+        padding: 12px;
+        border-radius: 5px;
+        font-size: 11px;
+        color: #555;
+        margin-bottom: 10px;
+        word-break: break-all;
+        border: 1px solid #ddd;
+      }
+
+      .verification-footer {
+        text-align: center;
+        padding: 20px;
+        background: #1a365d;
+        color: white;
+      }
+
+      .verification-code {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .verification-url {
+        font-size: 12px;
+        opacity: 0.8;
+      }
+
+      .watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        font-size: 80px;
+        color: rgba(26, 54, 93, 0.03);
+        font-weight: bold;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+        .receipt {
+          box-shadow: none;
+          border: 1px solid #333;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          padding: 20px;
+        }
+
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .receipt-details {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="receipt">
+      <div class="watermark">UCSM</div>
+
+      <div class="receipt-header">
+        <div class="receipt-title">Boleta de Pago REALIZADO</div>
+        <div class="receipt-details">
+          <div class="receipt-number">N° UCSM-2026-07-8945</div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="student-info">
+          <div class="section-title">Información del Estudiante</div>
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="info-label">Nombre Completo</div>
+              <div class="info-value">FREDY ENRIQUE ZEGARRA DÍAZ</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Código de Estudiante</div>
+              <div class="info-value">2025-118947</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Documento de Identidad</div>
+              <div class="info-value">DNI N° 70391278</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Facultad/Escuela</div>
+              <div class="info-value">Ingeniería de Sistemas</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Ciclo Académico</div>
+              <div class="info-value">2026-I</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Modalidad</div>
+              <div class="info-value">Pregrado Virtual</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-details">
+          <div class="payment-header">Detalle del Pago</div>
+          <table class="payment-table">
+            <thead>
+              <tr>
+                <th style="width: 60%">Concepto</th>
+                <th style="width: 20%">Cuota</th>
+                <th style="width: 20%">Monto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="concept-description">
+                    Pensión de Enseñanza - Ciclo 2026-I
+                  </div>
+                  <div class="special-rate">TARIFA ESPECIAL CONADIS</div>
+                </td>
+                <td style="text-align: center">2 de 6</td>
+                <td class="amount">S/ 1050.00</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="total-section">
+            <div class="total-label">TOTAL PAGADO:</div>
+            <div class="total-amount">S/ 1050.00</div>
+          </div>
+        </div>
+
+        <div class="payment-method">
+          <div class="section-title">Información de Vencimiento</div>
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="info-label">Fecha de Vencimiento</div>
+              <div class="info-value" style="color: #d63384; font-weight: bold">
+                18 de marzo de 2026
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Estado del Pago</div>
+              <div class="info-value" style="color: #fd7e14; font-weight: bold">
+                REALIZADO
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Código de Pago</div>
+              <div class="info-value">UCSM-PAY-2026-8945</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="authenticity-section">
+          <div class="authenticity-title">
+            🔐 AUTENTICIDAD Y VERIFICACIÓN DIGITAL
+          </div>
+          <div class="hash-info">
+            <strong>Hash SHA-256:</strong>
+            a8f3e2b9c1d7f4a6e9b2c5d8f1a4e7b9c6d3f8a2e5b9c4d7f1a8e3b6c9d5f2a7
+          </div>
+          <div class="hash-info">
+            <strong>Firma Digital:</strong>
+            RSA-4096:
+            9B2A5C8D1F4E7A3B6C9D2F5A8E1B4C7D9F3A6E2B5C8D4F7A1E3B9C6D2F8A5E
+          </div>
+          <div class="hash-info">
+            <strong>Timestamp:</strong>
+            2025-07-29T14:23:47-05:00 (UTC-5)
+          </div>
+          <div class="hash-info">
+            <strong>Token de Sesión:</strong>
+            UCSM-TKN-2025-8945-BETA-7A3F9E
+          </div>
+        </div>
+      </div>
+
+      <div class="verification-footer">
+        <div class="verification-code">
+          Código de Verificación: UCSM-VER-2025-8945-GAMMA
+        </div>
+        <div class="verification-url">
+          Verificar autenticidad en: https://pagos.ucsm.edu.pe/verificar
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

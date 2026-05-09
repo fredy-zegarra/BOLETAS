@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta Médica - Dr. Juan Manuel Zevallos Rodriguez</title>
+    <style>
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            background-color: #f0f4f8; 
+            margin: 0; 
+            padding: 20px; 
+            display: flex; 
+            justify-content: center; 
+        }
+        .receta-container { 
+            background: #ffffff; 
+            border: 1px solid #d1d5db; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            width: 100%; 
+            max-width: 650px; 
+            padding: 40px; 
+            box-sizing: border-box; 
+        }
+        .header { 
+            text-align: center; 
+            border-bottom: 3px solid #1e3a8a; 
+            padding-bottom: 15px; 
+            margin-bottom: 25px; 
+        }
+        .header h1 { 
+            margin: 0; 
+            font-size: 24px; 
+            color: #1e3a8a; 
+            text-transform: uppercase;
+        }
+        .header p { 
+            margin: 8px 0 0; 
+            font-size: 14px; 
+            color: #4b5563; 
+        }
+        .info-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+            margin-bottom: 25px; 
+            font-size: 14px; 
+            color: #1f2937; 
+        }
+        .info-grid div.full-width { 
+            grid-column: span 2; 
+        }
+        .info-grid strong {
+            color: #111827;
+        }
+        .section-title { 
+            font-size: 16px; 
+            font-weight: bold; 
+            color: #1e3a8a; 
+            border-bottom: 2px solid #e5e7eb; 
+            padding-bottom: 5px; 
+            margin-top: 25px; 
+            margin-bottom: 15px; 
+        }
+        .rx-symbol { 
+            font-size: 32px; 
+            font-weight: bold; 
+            color: #1e3a8a; 
+            font-family: 'Times New Roman', Times, serif; 
+            margin-bottom: 15px; 
+        }
+        .content-text { 
+            font-size: 14px; 
+            color: #374151; 
+            line-height: 1.6; 
+        }
+        .content-text ul { 
+            margin: 10px 0; 
+            padding-left: 20px; 
+        }
+        .footer { 
+            margin-top: 40px; 
+            border-top: 1px dashed #9ca3af; 
+            padding-top: 20px; 
+            font-size: 12px; 
+            color: #6b7280; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+        }
+        .footer strong {
+            color: #4b5563;
+        }
+        .watermark {
+            text-align: right;
+            font-size: 10px;
+            color: #d1d5db;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="receta-container">
+        <div class="header">
+            <h1>Dr. Juan Manuel Zevallos Rodriguez *</h1>
+            <p>Médico Especialista en Psiquiatría & Neurología Cognitiva *<br>
+            CMP 33303 * | RNE 15303 *</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="full-width"><strong>PACIENTE:</strong> Fredy Enrique Zegarra Diaz *</div>
+            <div><strong>EDAD:</strong> 36 años *</div>
+            <div><strong>DNI:</strong> 70391278 *</div>
+            <div class="full-width"><strong>DIAGNÓSTICO:</strong> Crisis de ansiedad *</div>
+        </div>
+
+        <div class="section-title">PRESCRIPCIÓN MÉDICA *</div>
+        <div class="rx-symbol">R *</div>
+        
+        <div class="content-text">
+            <p><strong>1. Clonazepam *</strong></p>
+            <ul>
+                <li><strong>Forma:</strong> Tabletas recubiertas *</li>
+                <li><strong>Concentración:</strong> Clonazepam 2 mg *</li>
+                <li><strong>Cantidad:</strong> 1 caja x 100 tabletas *</li>
+            </ul>
+            <p><strong>Instrucciones:</strong> Tomar 2 tabletas vía oral al inicio de la crisis de ansiedad. Si no hay mejoría a los 30 minutos, tomar 1 tableta adicional por hora. No exceder 6 tabletas al día ni 10 tabletas a la semana. *</p>
+        </div>
+
+        <div class="section-title">INDICACIONES & ADVERTENCIAS *</div>
+        <div class="content-text">
+            <ul>
+                <li>Medicamento de venta bajo receta médica. No administrar en menores de 12 años. De uso exclusivo para el tratamiento agudo de la crisis; no usar como preventivo. *</li>
+                <li>Informar al médico ante aparición de parestesias en manos o pies, palpitaciones o dolor precordial. Contraindicado con consumo de alcohol, tabaco y vasoconstrictores. Evitar exposición al frío excesivo. *</li>
+                <li>Almacenar a temperatura ambiente, fuera del alcance de niños. No usar durante el embarazo. Consulta de control en 30 días. *</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <div><strong>Fecha de emisión:</strong> 2 de mayo de 2026 *</div>
+            <div><strong>Válido:</strong> 30 días *</div>
+            <div><strong>Nº Receta:</strong> RX-2026-03-0057 *</div>
+            <div><strong>Horario de atención:</strong> Lun-Vie, 08:00-13:00 h. *</div>
+        </div>
+        <div class="watermark">Doc ID: 107 *</div>
+    </div>
+
+</body>
+</html>

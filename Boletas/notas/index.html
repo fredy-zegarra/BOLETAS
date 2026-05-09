@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Notas - UCSM</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #003366;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            color: #003366;
+            margin: 0;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+        .header h2 {
+            color: #666;
+            margin: 8px 0 0;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .course-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            border: 1px solid #e9ecef;
+        }
+        .course-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .course-info span {
+            font-weight: normal;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        th, td {
+            padding: 14px 15px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background-color: #003366;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+        td:nth-child(2) {
+            text-align: left;
+            font-weight: 500;
+            color: #333;
+        }
+        tbody tr:hover {
+            background-color: #f1f4f8;
+            transition: background-color 0.2s ease;
+        }
+        .final-grade {
+            font-weight: bold;
+            color: #003366;
+            background-color: #eef3f7;
+        }
+        .user-row {
+            background-color: #e8f4fd;
+        }
+        .user-row td {
+            color: #004085;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: right;
+            font-size: 12px;
+            color: #888;
+        }
+        .status-aprobado {
+            color: #155724;
+            background-color: #d4edda;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status-desaprobado {
+            color: #721c24;
+            background-color: #f8d7da;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Universidad Católica de Santa María</h1>
+        <h2>Sistema de Gestión Académica - Actas de Evaluación</h2>
+    </div>
+
+    <div class="course-info">
+        <div>
+            <p>Programa: <span>Ingeniería de Sistemas</span></p>
+            <p>Curso: <span>Programación de Servidores</span></p>
+            <p>Semestre: <span>III Semestre</span></p>
+        </div>
+        <div>
+            <p>Modalidad: <span>Virtual</span></p>
+            <p>Docente: <span>Ing. Mendoza Rivera, Carlos Alberto</span></p>
+            <p>Fecha de Emisión: <span>06 de Abril, 2026</span></p>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Apellidos y Nombres</th>
+                <th>Fase 1<br><small>(30%)</small></th>
+                <th>Fase 2<br><small>(30%)</small></th>
+                <th>Fase 3<br><small>(40%)</small></th>
+                <th>Promedio<br>Ponderado</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Alarcon Perez, Valeria Sofia</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td class="final-grade">15</td>
+                <td><span class="status-aprobado">Aprobado</span></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Caceres Salas, Juan Diego</td>
+                <td>11</td>
+                <td>12</td>
+                <td>14</td>
+                <td class="final-grade">13</td>
+                <td><span class="status-aprobado">Aprobado</span></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Fernandez Ruiz, Mauricio</td>
+                <td>16</td>
+                <td>17</td>
+                <td>15</td>
+                <td class="final-grade">16</td>
+                <td><span class="status-aprobado">Aprobado</span></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Gomez Tapia, Andrea Carolina</td>
+                <td>09</td>
+                <td>11</td>
+                <td>12</td>
+                <td class="final-grade">11</td>
+                <td><span class="status-desaprobado">Desaprobado</span></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Quispe Mamani, Luis Fernando</td>
+                <td>15</td>
+                <td>14</td>
+                <td>16</td>
+                <td class="final-grade">15</td>
+                <td><span class="status-aprobado">Aprobado</span></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Rodriguez Silva, Camila Alejandra</td>
+                <td>18</td>
+                <td>17</td>
+                <td>18</td>
+                <td class="final-grade">18</td>
+                <td><span class="status-aprobado">Aprobado</span></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Vargas Castro, Eduardo Alonso</td>
+                <td>12</td>
+                <td>10</td>
+                <td>14</td>
+                <td class="final-grade">12</td>
+                <td><span class="status-aprobado">Aprobado</span></td>
+            </tr>
+            <tr class="user-row">
+                <td>8</td>
+                <td>Zegarra Diaz, Fredy Enrique</td>
+                <td>19</td>
+                <td>18</td>
+                <td>20</td>
+                <td class="final-grade">19</td>
+                <td><span class="status-aprobado">Aprobado</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="footer">
+        <p>Documento generado automáticamente por el Portal ERP University.</p>
+    </div>
+</div>
+
+</body>
+</html>
